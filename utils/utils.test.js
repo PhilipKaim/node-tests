@@ -1,17 +1,23 @@
 const expect = require('expect');
 const utils = require('./utils');
 
-it('Should adding two numbers', () => {
-    var res = utils.add(10, 44);
+describe('Utils', () => {
+    describe('#add', () => {
+        it('Should adding two numbers', () => {
+            var res = utils.add(10, 44);
+        
+            expect(res).toBe(54).toBeA('number');
+        });
+    });
 
-    expect(res).toBe(54).toBeA('number');
-});
-
-// async testing
-it('Should square a number', (done) => {
-    utils.square(6, (res) => {
-        expect(res).toBe(36).toBeA('number');
-        done();
+    describe('#square', () => {
+        // async testing
+        it('Should square a number', (done) => {
+            utils.square(6, (res) => {
+                expect(res).toBe(36).toBeA('number');
+                done();
+            });
+        });
     });
 });
 
